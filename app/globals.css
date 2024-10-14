@@ -13,3 +13,7 @@
     }
   }
 }
+
+.hidden-path {
+  visibility: hidden;
+}

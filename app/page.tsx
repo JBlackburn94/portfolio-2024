@@ -1,5 +1,10 @@
-import Image from "next/image";
+import PageLoader from "../app/components/PageLoader";
 
 export default function Home() {
-  return <main></main>;
+  return (
+    <>
+      <PageLoader />
+      <main></main>
+    </>
+  );
 }
