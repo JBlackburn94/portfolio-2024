@@ -3,7 +3,7 @@ import { useEffect, useRef } from "react";
 import gsap from "gsap";
 
 const ProgressBar: React.FC = () => {
-  const progressBarRef = useRef<HTMLDivElement>(null);
+  const progressTextRef = useRef<HTMLSpanElement>(null);
 
   useEffect(() => {
     const duration = 2;
@@ -14,9 +14,11 @@ const ProgressBar: React.FC = () => {
       {
         value: total,
         duration: duration,
+        delay: 0.5,
         onUpdate: function () {
-          if (progressBarRef.current) {
-            progressBarRef.current.style.width = this.targets()[0].value + "%";
+          if (progressTextRef.current) {
+            progressTextRef.current.innerText =
+              Math.floor(this.targets()[0].value) + "%";
           }
         },
         ease: "power1.out",
@@ -25,12 +27,10 @@ const ProgressBar: React.FC = () => {
   }, []);
 
   return (
-    <div className="relative w-full bg-neutral-800 overflow-hidden">
-      <div
-        className="h-5 bg-white transition-all duration-500"
-        ref={progressBarRef}
-        style={{ width: "0%" }}
-      ></div>
+    <div className="flex justify-center items-center text-white">
+      <span className="text-xl font-bold" ref={progressTextRef}>
+        0%
+      </span>
     </div>
   );
 };

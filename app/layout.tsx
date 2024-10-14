@@ -5,12 +5,10 @@ import "./globals.css";
 const skModernistBold = localFont({
   src: "./fonts/Sk-Modernist-Bold.woff",
   variable: "--font-modernist-bold",
-  weight: "100 900",
 });
 const skModernistRegular = localFont({
   src: "./fonts/Sk-Modernist-Regular.woff",
   variable: "--font-modernist-reg",
-  weight: "100 900",
 });
 
 export const metadata: Metadata = {
