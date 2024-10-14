@@ -1,11 +1,10 @@
 "use client";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect } from "react";
 import ProgressBar from "./ProgressBar";
 import AnimatedLogo from "./AnimatedLogo";
 
 const PageLoader: React.FC = () => {
   const [isPageLoading, setIsPageLoading] = useState(true);
-  const logoRef = useRef<HTMLImageElement>(null);
 
   useEffect(() => {
     const handlePageLoad = () => setIsPageLoading(false);
