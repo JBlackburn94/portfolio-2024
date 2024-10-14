@@ -34,4 +34,5 @@ const Logo = forwardRef<SVGSVGElement, React.SVGProps<SVGSVGElement>>(
   }
 );
 
+Logo.displayName = "Logo";
 export default Logo;
