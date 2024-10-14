@@ -11,7 +11,7 @@ export default function Home() {
     <>
       <PageLoader />
       <Header />
-      <main>
+      <main className="pt-36">
         <Hero />
         <About />
         <Projects />
