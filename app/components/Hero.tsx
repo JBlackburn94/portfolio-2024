@@ -1,3 +1,5 @@
-export default function Hero() {
-  return <div>Hero</div>;
-}
+const Hero = () => {
+  return <section className="h-screen">Hero</section>;
+};
+
+export default Hero;

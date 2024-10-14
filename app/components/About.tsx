@@ -1,3 +1,5 @@
-export default function About() {
-  return <div>About</div>;
-}
+const About = () => {
+  return <section className="h-screen">About</section>;
+};
+
+export default About;

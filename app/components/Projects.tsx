@@ -1,3 +1,5 @@
-export default function Projects() {
-  return <div>Projects</div>;
-}
+const Projects = () => {
+  return <section className="h-screen">Projects</section>;
+};
+
+export default Projects;
