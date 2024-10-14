@@ -12,21 +12,16 @@ import {
 } from "../utils/animations";
 
 const Header = () => {
-  const [isOpen, setIsOpen] = useState(false);
-
   useEffect(() => {
     headerAnimaton();
   }, []);
 
   const handleOpen = () => {
     navOpenAnimation();
-
-    setIsOpen(true);
   };
 
   const handleClose = () => {
     navCloseAnimation();
-    setIsOpen(false);
   };
 
   return (
@@ -62,9 +57,8 @@ const Header = () => {
         {/* Mobile links */}
         <div className="flex flex-col justify-center items-center gap-10 mobile-menu absolute bottom-0 left-0 h-0 w-full bg-neutral-800">
           {navLinks.map((link) => (
-            <span className="overflow-hidden h-auto w-full">
+            <span key={link.id} className="overflow-hidden h-auto w-full">
               <Link
-                key={link.id}
                 href={link.url}
                 className="text-white text-center py-4 block nav-link text-xl"
                 onClick={handleClose}
