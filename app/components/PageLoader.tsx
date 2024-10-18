@@ -19,7 +19,7 @@ const PageLoader: React.FC = () => {
   }
 
   return (
-    <div className="fixed top-0 left-0 h-full w-full z-50 bg-black flex justify-center items-center">
+    <div className="fixed top-0 left-0 h-full w-full z-50 bg-slate-950 flex justify-center items-center">
       <div className="flex flex-col gap-10">
         <AnimatedLogo />
         <ProgressBar />
