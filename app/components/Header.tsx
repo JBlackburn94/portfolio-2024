@@ -1,85 +1,70 @@
 "use client";
-import { useEffect } from "react";
 import Link from "next/link";
 import { navLinks } from "../constants/constants";
+import { usePageLoadFadeIn } from "../utils/animationHooks/useAnimations";
 import Logo from "./Logo";
-import { FaBars, FaTimes, FaLinkedin } from "react-icons/fa";
-import { FaGithub } from "react-icons/fa6";
-import {
-  headerAnimaton,
-  navCloseAnimation,
-  navOpenAnimation,
-} from "../utils/animations";
+import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { useState } from "react";
 
 const Header = () => {
-  useEffect(() => {
-    headerAnimaton();
-  }, []);
+  const [isOpen, setIsOpen] = useState(false);
 
-  const handleOpen = () => {
-    navOpenAnimation();
-  };
-
-  const handleClose = () => {
-    navCloseAnimation();
-  };
-
+  usePageLoadFadeIn();
   return (
-    <header className="fixed p-4 md:p-6 lg:p-8 w-full header overflow-hidden">
-      <nav className="flex justify-between items-center">
-        <Logo className="w-12 backdrop-blur-sm bg-transparent z-50" />
-
-        {/* Desktop menu */}
-        <div className="md:flex gap-[10px] hidden text-slate-400 bg-slate-400 border border-slate-400 border-opacity-20 px-4 py-2 rounded-full bg-opacity-10 backdrop-blur-md">
+    <header className="relative px-8 py-2 fade-in opacity-0 z-50 w-full bg-none">
+      <nav
+        className="flex justify-between items-center"
+        role="navigation"
+        aria-label="Main navigation"
+      >
+        <Logo className="w-12" />
+        <ul className="hidden lg:flex gap-3 bg-slate-700 py-2 px-3 rounded-full border border-slate-500 bg-opacity-40 border-opacity-20 backdrop-blur-sm">
           {navLinks.map((link) => (
-            <Link
-              key={link.id}
-              href={link.url}
-              className="text-sm hover:text-slate-50 active:text-slate-50 transition-all duration-500 ease-in-out"
-            >
-              {link.title}
-            </Link>
-          ))}
-        </div>
-
-        {/* Mobile menu */}
-        <div className="flex flex-col md:hidden text-slate-50 backdrop-blur-sm bg-transparent h-[30px] w-[30px] overflow-hidden z-50">
-          <FaBars
-            onClick={handleOpen}
-            className="hamburger cursor-pointer min-h-[28px] min-w-[28px]"
-          />
-          <FaTimes
-            onClick={handleClose}
-            className="close cursor-pointer min-h-[28px] min-w-[28px]"
-          />
-        </div>
-
-        {/* Mobile links */}
-        <div className="flex flex-col justify-center items-center gap-10 mobile-menu absolute bottom-0 left-0 h-0 w-full bg-gradient-to-tl from-slate-900 to-slate-800">
-          {navLinks.map((link) => (
-            <span key={link.id} className="overflow-hidden h-auto w-full">
+            <li key={link.id}>
               <Link
                 href={link.url}
-                className="text-white text-center py-4 block nav-link text-xl"
-                onClick={handleClose}
+                aria-label={link.label}
+                className="text-slate-400 hover:text-slate-50 font-light text-sm transition-all duration-300 ease-in-out"
               >
                 {link.title}
               </Link>
-            </span>
+            </li>
           ))}
+        </ul>
+        <div className="hidden lg:flex gap-3">
+          <Link href="#">
+            <FaLinkedin
+              size={32}
+              className="text-slate-400 hover:text-slate-50 transition-all duration-300 ease-in-out"
+            />
+          </Link>
+          <Link href="#">
+            <FaGithub
+              size={32}
+              className="text-slate-400 hover:text-slate-50 transition-all duration-300 ease-in-out"
+            />
+          </Link>
         </div>
 
-        {/* Social icons */}
-        <div className="hidden md:flex gap-[10px] backdrop-blur-sm bg-transparent">
-          <FaLinkedin
-            size={35}
-            className="hover:rotate-[10deg] hover:scale-125 transition-all duration-300 ease-in-out "
-          />
-          <FaGithub
-            size={35}
-            className="hover:rotate-[10deg] hover:scale-125 transition-all duration-300 ease-in-out"
-          />
+        {/* Mobile nav */}
+        <div className="block lg:hidden z-50">
+          <button onClick={() => setIsOpen(!isOpen)}>
+            {isOpen ? "Close" : "Open"}
+          </button>
         </div>
+        {isOpen && (
+          <div className="absolute flex justify-end h-screen w-full top-0 left-0 bg-slate-950 bg-opacity-10 backdrop-blur-sm">
+            <ul className="flex bg-slate-900 p-10 flex-col gap-3 text-xl h-[400px] w-[300px]">
+              {navLinks.map((link) => (
+                <li key={link.id}>
+                  <Link href={link.url} aria-label={link.label}>
+                    {link.title}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
       </nav>
     </header>
   );

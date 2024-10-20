@@ -1,9 +1,5 @@
 const About = () => {
-  return (
-    <section className="h-screen bg-gradient-to-bl from-slate-950 to-slate-900">
-      About
-    </section>
-  );
+  return <section className="h-screen">About</section>;
 };
 
 export default About;

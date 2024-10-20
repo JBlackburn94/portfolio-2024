@@ -1,8 +1,6 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
-import { ReactLenis } from "./utils/lenis";
-import Header from "./components/Header";
 
 const skModernistBold = localFont({
   src: "./fonts/Sk-Modernist-Bold.woff",
@@ -27,12 +25,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${skModernistBold.variable} ${skModernistRegular.variable} antialiased bg-slate-950 text-slate-50`}
+        className={`${skModernistBold.variable} ${skModernistRegular.variable} antialiased bg-gradient-to-tl from-slate-950 to bg-slate-900 text-slate-50`}
       >
-        <Header />
-        <ReactLenis root options={{ lerp: 0.05 }}>
-          {children}
-        </ReactLenis>
+        {children}
       </body>
     </html>
   );
