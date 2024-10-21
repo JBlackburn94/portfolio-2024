@@ -3,7 +3,7 @@ import Link from "next/link";
 import { navLinks } from "../constants/constants";
 import { usePageLoadFadeIn } from "../utils/animationHooks/useAnimations";
 import Logo from "./Logo";
-import { FaGithub, FaLinkedin } from "react-icons/fa";
+import { FaBars, FaGithub, FaLinkedin, FaTimes } from "react-icons/fa";
 import { useState } from "react";
 
 const Header = () => {
@@ -11,7 +11,7 @@ const Header = () => {
 
   usePageLoadFadeIn();
   return (
-    <header className="relative px-3 fade-in opacity-0 z-50 w-full bg-none">
+    <header className="relative pt-2 px-3 fade-in opacity-0 z-50 w-full bg-none">
       <nav
         className="flex justify-between items-center"
         role="navigation"
@@ -49,12 +49,12 @@ const Header = () => {
         {/* Mobile nav */}
         <div className="block lg:hidden z-50">
           <button onClick={() => setIsOpen(!isOpen)}>
-            {isOpen ? "Close" : "Open"}
+            {isOpen ? <FaTimes size={32} /> : <FaBars size={32} />}
           </button>
         </div>
         {isOpen && (
           <div className="absolute flex justify-end h-screen w-full top-0 left-0 bg-slate-950 bg-opacity-10 backdrop-blur-sm">
-            <ul className="flex border-l-2 border-b-2 border-red-500 p-10 flex-col gap-3 text-xl h-[400px] w-[300px]">
+            <ul className="flex uppercase font-black bg-blue-500 p-10 flex-col gap-3 text-xl h-[400px] w-[300px]">
               {navLinks.map((link) => (
                 <li key={link.id}>
                   <Link href={link.url} aria-label={link.label}>

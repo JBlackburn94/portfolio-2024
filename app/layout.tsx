@@ -1,14 +1,18 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import { Inter, Gupter } from "next/font/google";
 import "./globals.css";
 
-const skModernistBold = localFont({
-  src: "./fonts/Sk-Modernist-Bold.woff",
-  variable: "--font-modernist-bold",
+const inter = Inter({
+  subsets: ["latin"],
+  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
+  variable: "--inter",
 });
-const skModernistRegular = localFont({
-  src: "./fonts/Sk-Modernist-Regular.woff",
-  variable: "--font-modernist-reg",
+
+const gupter = Gupter({
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  variable: "--gupter",
 });
 
 export const metadata: Metadata = {
@@ -25,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${skModernistBold.variable} ${skModernistRegular.variable} antialiased bg-gradient-to-tl from-slate-950 to-red-950 text-slate-50`}
+        className={`${gupter.variable} ${inter.variable} antialiased text-white`}
       >
         {children}
       </body>

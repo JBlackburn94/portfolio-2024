@@ -15,20 +15,7 @@ export default function Home() {
     <>
       <PageLoader />
       <Header />
-      <main className="relative backdrop-blur-sm">
-        <video
-          autoPlay
-          muted
-          loop
-          playsInline
-          preload="auto"
-          className="absolute w-full h-full object-cover opacity-50 z-[-1]"
-        >
-          <source
-            src="https://2024-jb-portfolio.s3.eu-north-1.amazonaws.com/videos/hero-video.mp4"
-            type="video/mp4"
-          />
-        </video>
+      <main className="font-inter">
         <Hero />
         <About />
         <Projects />
