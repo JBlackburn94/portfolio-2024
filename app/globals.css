@@ -20,6 +20,9 @@ section {
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  height: 100vh;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 .hidden-path {

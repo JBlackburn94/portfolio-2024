@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${gupter.variable} ${inter.variable} antialiased text-white`}
+        className={`${gupter.variable} ${inter.variable} antialiased bg-black text-white`}
       >
         {children}
       </body>

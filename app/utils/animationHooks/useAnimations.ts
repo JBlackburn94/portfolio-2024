@@ -16,118 +16,37 @@ export const usePageLoadFadeIn = () => {
   });
 };
 
-export const useHeroBgScroll = () => {
+export const useBackgroundScroll = () => {
   useGSAP(() => {
-    gsap.to("#hero-image", {
-      scale: 4,
-      opacity: 0,
+    tl.to(".background-image", {
+      xPercent: -80,
       scrollTrigger: {
-        trigger: "#hero-section",
+        trigger: ".background-image",
         start: "top top",
-        end: "bottom+=1000 top",
-        scrub: true,
-        pin: true,
-        toggleActions: "play none none reverse",
-      },
-    });
-  });
-};
-
-export const useHeroContentScroll = () => {
-  useGSAP(() => {
-    gsap.to("#hero-content", {
-      y: -100,
-      scale: 2,
-      color: "#000000",
-      scrollTrigger: {
-        trigger: "#hero-section",
-        start: "top top",
-        end: "bottom+=200 top",
-        scrub: true,
-        toggleActions: "play none none reverse",
-      },
-    });
-  });
-};
-
-export const useHeroAnimation = () => {
-  useGSAP(() => {
-    tl.to("#hero-subheading-container", {
-      yPercent: -80,
-      scrollTrigger: {
-        trigger: "#hero-section",
-        start: "top top",
-        end: "center top",
+        end: "100% top",
         scrub: true,
         toggleActions: "play none none reverse",
       },
     })
-      .to("#hero-heading", {
-        opacity: 0,
+      .to("#sub-header", {
+        scale: 0,
         scrollTrigger: {
-          trigger: "#hero-content",
-          start: "10% top",
-          end: "center top",
+          trigger: "#landing-section",
+          start: "1% top",
+          end: "8% top",
           scrub: true,
           toggleActions: "play none none reverse",
         },
       })
-      .to("#hero-subheading-one", {
-        y: -100,
-        duration: 5,
+      .to("#header", {
+        scale: 1.5,
+        yPercent: -40,
         scrollTrigger: {
-          trigger: "#hero-content",
-          start: "bottom top",
-          end: "bottom+=300 top",
-          scrub: true,
-          toggleActions: "play none none reverse",
-        },
-      })
-      .to("#hero-subheading-two", {
-        y: -60,
-        duration: 5,
-        scrollTrigger: {
-          trigger: "#hero-content",
-          start: "bottom+=100 top",
-          end: "bottom+=400 top",
-          scrub: true,
-          toggleActions: "play none none reverse",
-        },
-      });
-  });
-};
-
-export const useAboutSectionParallax = () => {
-  useGSAP(() => {
-    tl.to("#about-section", {
-      backgroundColor: "#000000",
-      scrollTrigger: {
-        trigger: "#about-section",
-        start: "top top",
-        end: "bottom+=500 top",
-        scrub: true,
-        pin: true,
-        toggleActions: "play none none reverse",
-      },
-    })
-      .to("#about-header", {
-        scale: 150,
-        rotate: 100,
-        scrollTrigger: {
-          trigger: "#about-section",
+          trigger: "#landing-section",
           start: "top top",
-          end: "80% top",
+          end: "100% top",
           scrub: true,
-          toggleActions: "play none none reverse",
-        },
-      })
-      .to("#about-header", {
-        display: "none",
-        scrollTrigger: {
-          trigger: "#about-section",
-          start: "80% top",
-          end: "bottom+=100 top",
-          scrub: true,
+          pin: true,
           toggleActions: "play none none reverse",
         },
       });
