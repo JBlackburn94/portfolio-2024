@@ -1,11 +1,9 @@
-import React from "react";
+import { usePageLoadFadeIn } from "../utils/animationHooks/useAnimations";
 
 const Hero = () => {
-  return (
-    <section className="h-screen flex justify-center items-center mt-[-100px]">
-      Hero
-    </section>
-  );
+  usePageLoadFadeIn();
+
+  return <section className="fade-in h-screen mt-[-100px]">Hero</section>;
 };
 
 export default Hero;

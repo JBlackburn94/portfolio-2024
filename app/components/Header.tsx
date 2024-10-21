@@ -11,20 +11,20 @@ const Header = () => {
 
   usePageLoadFadeIn();
   return (
-    <header className="relative px-8 py-2 fade-in opacity-0 z-50 w-full bg-none">
+    <header className="relative px-3 fade-in opacity-0 z-50 w-full bg-none">
       <nav
         className="flex justify-between items-center"
         role="navigation"
         aria-label="Main navigation"
       >
         <Logo className="w-12" />
-        <ul className="hidden lg:flex gap-3 bg-slate-700 py-2 px-3 rounded-full border border-slate-500 bg-opacity-40 border-opacity-20 backdrop-blur-sm">
+        <ul className="hidden lg:flex gap-3 bg-slate-700 py-2 px-3 rounded-full border border-slate-500 bg-opacity-30 border-opacity-20 backdrop-blur-sm">
           {navLinks.map((link) => (
             <li key={link.id}>
               <Link
                 href={link.url}
                 aria-label={link.label}
-                className="text-slate-400 hover:text-slate-50 font-light text-sm transition-all duration-300 ease-in-out"
+                className="text-slate-300 hover:text-slate-50 font-light text-sm transition-all duration-300 ease-in-out"
               >
                 {link.title}
               </Link>
@@ -35,13 +35,13 @@ const Header = () => {
           <Link href="#">
             <FaLinkedin
               size={32}
-              className="text-slate-400 hover:text-slate-50 transition-all duration-300 ease-in-out"
+              className="text-slate-300 hover:text-slate-50 transition-all duration-300 ease-in-out"
             />
           </Link>
           <Link href="#">
             <FaGithub
               size={32}
-              className="text-slate-400 hover:text-slate-50 transition-all duration-300 ease-in-out"
+              className="text-slate-300 hover:text-slate-50 transition-all duration-300 ease-in-out"
             />
           </Link>
         </div>
@@ -54,7 +54,7 @@ const Header = () => {
         </div>
         {isOpen && (
           <div className="absolute flex justify-end h-screen w-full top-0 left-0 bg-slate-950 bg-opacity-10 backdrop-blur-sm">
-            <ul className="flex bg-slate-900 p-10 flex-col gap-3 text-xl h-[400px] w-[300px]">
+            <ul className="flex border-l-2 border-b-2 border-red-500 p-10 flex-col gap-3 text-xl h-[400px] w-[300px]">
               {navLinks.map((link) => (
                 <li key={link.id}>
                   <Link href={link.url} aria-label={link.label}>

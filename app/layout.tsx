@@ -25,7 +25,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${skModernistBold.variable} ${skModernistRegular.variable} antialiased bg-gradient-to-tl from-slate-950 to bg-slate-900 text-slate-50`}
+        className={`${skModernistBold.variable} ${skModernistRegular.variable} antialiased bg-gradient-to-tl from-slate-950 to-red-950 text-slate-50`}
       >
         {children}
       </body>

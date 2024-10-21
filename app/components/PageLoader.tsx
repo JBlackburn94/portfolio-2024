@@ -40,7 +40,7 @@ const PageLoader: React.FC = () => {
   return (
     <div
       ref={pageLoaderRef}
-      className="fixed top-0 left-0 h-full w-full z-50 bg-gradient-to-tl from-slate-950 to-slate-900 flex justify-center items-center"
+      className="fixed top-0 left-0 h-full w-full z-50 bg-gradient-to-tl from-slate-950 to-red-950 flex justify-center items-center"
     >
       <div ref={logoRef} className="flex flex-col gap-10">
         <AnimatedLogo />
