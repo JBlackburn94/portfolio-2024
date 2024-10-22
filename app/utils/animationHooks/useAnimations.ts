@@ -16,37 +16,46 @@ export const usePageLoadFadeIn = () => {
   });
 };
 
-export const useBackgroundScroll = () => {
+export const useHeroAnimations = () => {
   useGSAP(() => {
-    tl.to(".background-image", {
-      xPercent: -80,
+    tl.to("#hero", {
+      backgroundColor: "#ffffff",
       scrollTrigger: {
-        trigger: ".background-image",
+        trigger: "#hero",
         start: "top top",
-        end: "100% top",
+        end: "bottom+=500 top",
+        pin: true,
         scrub: true,
         toggleActions: "play none none reverse",
       },
     })
-      .to("#sub-header", {
-        scale: 0,
+      .to("#hero h2", {
+        color: "#000000",
         scrollTrigger: {
-          trigger: "#landing-section",
-          start: "1% top",
-          end: "8% top",
+          trigger: "#hero",
+          start: "top top",
+          end: "bottom+=500 top",
           scrub: true,
           toggleActions: "play none none reverse",
         },
       })
-      .to("#header", {
-        scale: 1.5,
-        yPercent: -40,
+      .to("#hero h1", {
+        color: "#000000",
         scrollTrigger: {
-          trigger: "#landing-section",
+          trigger: "#hero",
           start: "top top",
-          end: "100% top",
+          end: "bottom+=500 top",
           scrub: true,
-          pin: true,
+          toggleActions: "play none none reverse",
+        },
+      })
+      .to("#hero p", {
+        color: "#000000",
+        scrollTrigger: {
+          trigger: "#hero",
+          start: "top top",
+          end: "bottom+=500 top",
+          scrub: true,
           toggleActions: "play none none reverse",
         },
       });

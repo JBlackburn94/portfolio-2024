@@ -1,5 +1,5 @@
 const About = () => {
-  return <section className="z-10">About</section>;
+  return <section className="bg-white text-black">About</section>;
 };
 
 export default About;
