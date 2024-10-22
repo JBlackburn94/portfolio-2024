@@ -20,6 +20,7 @@ export const useHeroAnimations = () => {
   useGSAP(() => {
     tl.to("#hero", {
       backgroundColor: "#ffffff",
+      scale: 1.5,
       scrollTrigger: {
         trigger: "#hero",
         start: "top top",
