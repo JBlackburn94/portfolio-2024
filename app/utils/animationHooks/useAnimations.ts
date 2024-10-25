@@ -54,7 +54,7 @@ export const useHeroScroll = () => {
         top: 0,
         scrollTrigger: {
           trigger: "#animatedHeroText-2",
-          start: "top top",
+          start: "center+=100 top",
           end: "bottom+=250 top",
           scrub: 1,
           toggleActions: "play none none reverse",
@@ -64,6 +64,36 @@ export const useHeroScroll = () => {
         text: "Creating",
         scrollTrigger: {
           trigger: "#animatedHeroText-2",
+          start: "top top",
+          end: "bottom+=250 top",
+          scrub: 1,
+          toggleActions: "play none none reverse",
+        },
+      })
+      .to("#languageContainer", {
+        opacity: 1,
+        scrollTrigger: {
+          trigger: "#languageContainer",
+          start: "top top",
+          end: "bottom+=250 top",
+          scrub: 1,
+          toggleActions: "play none none reverse",
+        },
+      })
+      .to("#subheading-1", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: "#subheading-1",
+          start: "top top",
+          end: "bottom+=250 top",
+          scrub: 1,
+          toggleActions: "play none none reverse",
+        },
+      })
+      .to("#subheading-2", {
+        opacity: 0,
+        scrollTrigger: {
+          trigger: "#subheading-1",
           start: "top top",
           end: "bottom+=250 top",
           scrub: 1,
