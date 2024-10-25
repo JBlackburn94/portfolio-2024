@@ -1,9 +1,10 @@
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/all";
+import TextPlugin from "gsap/TextPlugin";
 
 const tl = gsap.timeline();
-gsap.registerPlugin(ScrollTrigger, useGSAP);
+gsap.registerPlugin(ScrollTrigger, useGSAP, TextPlugin);
 
 export const usePageLoadFadeIn = () => {
   useGSAP(() => {
@@ -16,47 +17,56 @@ export const usePageLoadFadeIn = () => {
   });
 };
 
-export const useHeroAnimations = () => {
+export const useHeroScroll = () => {
   useGSAP(() => {
-    tl.to("#hero", {
+    gsap.to(".hero", {
+      color: "#000000",
+      scale: 1.1,
       backgroundColor: "#ffffff",
-      scale: 1.5,
       scrollTrigger: {
-        trigger: "#hero",
+        trigger: ".hero",
         start: "top top",
-        end: "bottom+=500 top",
+        end: "bottom+=500 center",
         pin: true,
         scrub: true,
         toggleActions: "play none none reverse",
       },
+    });
+
+    tl.from("#heading", {
+      x: 10,
+      opacity: 0,
+      duration: 1,
+      delay: 4,
+      stagger: 0.2,
     })
-      .to("#hero h2", {
-        color: "#000000",
+      .to("#animatedHeroText-2", {
+        marginLeft: "90px",
         scrollTrigger: {
-          trigger: "#hero",
+          trigger: "#animatedHeroText-2",
           start: "top top",
-          end: "bottom+=500 top",
-          scrub: true,
+          end: "bottom+=250 top",
+          scrub: 1,
           toggleActions: "play none none reverse",
         },
       })
-      .to("#hero h1", {
-        color: "#000000",
+      .to("#animatedHeroText-1", {
+        top: 0,
         scrollTrigger: {
-          trigger: "#hero",
+          trigger: "#animatedHeroText-2",
           start: "top top",
-          end: "bottom+=500 top",
-          scrub: true,
+          end: "bottom+=250 top",
+          scrub: 1,
           toggleActions: "play none none reverse",
         },
       })
-      .to("#hero p", {
-        color: "#000000",
+      .to("#animatedHeroText-2 span:nth-child(1)", {
+        text: "Creating",
         scrollTrigger: {
-          trigger: "#hero",
+          trigger: "#animatedHeroText-2",
           start: "top top",
-          end: "bottom+=500 top",
-          scrub: true,
+          end: "bottom+=250 top",
+          scrub: 1,
           toggleActions: "play none none reverse",
         },
       });

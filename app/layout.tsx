@@ -1,17 +1,17 @@
 import type { Metadata } from "next";
-import { Inter, Gupter } from "next/font/google";
+import { Roboto, Playball } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
+const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
-  variable: "--inter",
+  weight: ["400", "700"],
+  variable: "--roboto",
 });
 
-const gupter = Gupter({
+const playball = Playball({
   subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--gupter",
+  weight: ["400"],
+  variable: "--playball",
 });
 
 export const metadata: Metadata = {
@@ -28,7 +28,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${gupter.variable} ${inter.variable} antialiased bg-black text-white`}
+        className={`${playball.variable} ${roboto.variable} antialiased bg-black text-white`}
       >
         {children}
       </body>

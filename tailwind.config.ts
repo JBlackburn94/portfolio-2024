@@ -9,8 +9,8 @@ const config: Config = {
   theme: {
     extend: {
       fontFamily: {
-        inter: ["var(--inter)"],
-        gupter: ["var(--gupter)"],
+        roboto: ["var(--roboto)"],
+        playball: ["var(--playball)"],
       },
     },
   },

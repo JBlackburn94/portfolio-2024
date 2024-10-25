@@ -54,7 +54,7 @@ const Header = () => {
         </div>
         {isOpen && (
           <div className="absolute flex justify-end h-screen w-full top-0 left-0 bg-slate-950 bg-opacity-10 backdrop-blur-sm">
-            <ul className="flex uppercase font-black bg-blue-500 p-10 flex-col gap-3 text-xl h-[400px] w-[300px]">
+            <ul className="flex uppercase font-black bg-orange-400 p-10 flex-col gap-3 text-xl h-[400px] w-[300px]">
               {navLinks.map((link) => (
                 <li key={link.id}>
                   <Link href={link.url} aria-label={link.label}>
