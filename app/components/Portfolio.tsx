@@ -1,6 +1,8 @@
 import PortfolioCard from "./PortfolioCard";
 import { usePortfolioAnimation } from "../utils/animationHooks/useAnimations";
 import artioBg from "../../public/artio-about.webp";
+import beautySchoolBg from "../../public/beauty-school.webp";
+import shiftMateBg from "../../public/shiftMate.webp";
 
 const Portfolio = () => {
   usePortfolioAnimation();
@@ -9,36 +11,36 @@ const Portfolio = () => {
     {
       name: "Artio",
       image: artioBg,
-      tech: ["React", "Next.js", "TypeScript"],
-      description: "A music streaming platform.",
+      tech: ["Next.js", "TypeScript", "TailwindCSS"],
+      description:
+        "Artio are a band from Leeds, Uk. They approached me with a basic design for a single page website to promote their music, tour dates and merchandise.",
       liveLink: "https://www.artiomusic.com",
       githubLink: "https://github.com/JBlackburn94/artio",
     },
     {
-      name: "Project 2",
-      image: artioBg,
-      tech: ["React", "Next.js", "TypeScript"],
-      description: "A music streaming platform.",
-      liveLink: "https://www.artiomusic.com",
-      githubLink: "https://github.com/JBlackburn94/artio",
+      name: "Beauty School",
+      image: beautySchoolBg,
+      tech: ["Next.js", "TypeScript", "TailwindCSS"],
+      description:
+        "Beauty School are a band from Leeds, UK. I designed and built this website to promote their music, tour dates and merchandise. They wanted something modern that stands out from the variety of no-code websites that their peers use.",
+      liveLink: "",
+      githubLink: "",
     },
     {
-      name: "Project 3",
-      image: artioBg,
-      tech: ["React", "Next.js", "TypeScript"],
-      description: "A music streaming platform.",
-      liveLink: "https://www.artiomusic.com",
-      githubLink: "https://github.com/JBlackburn94/artio",
+      name: "ShiftMate",
+      image: shiftMateBg,
+      tech: [
+        "React",
+        "Next.js",
+        "TypeScript",
+        "TailwindCSS",
+        "Node.js",
+        "Nodemailer",
+      ],
+      description: "",
+      liveLink: "",
+      githubLink: "",
     },
-    {
-      name: "Project 4",
-      image: artioBg,
-      tech: ["React", "Next.js", "TypeScript"],
-      description: "A music streaming platform.",
-      liveLink: "https://www.artiomusic.com",
-      githubLink: "https://github.com/JBlackburn94/artio",
-    },
-    // Add more portfolio items here
   ];
 
   return (
