@@ -4,7 +4,10 @@ const Hero = () => {
   useHeroScroll();
 
   return (
-    <section className="hero mt-[-100px] h-screen w-full">
+    <section
+      className="hero mt-[-100px] h-screen w-full"
+      aria-labelledby="hero-section"
+    >
       <div className="leading-none">
         <h2 id="subheading-1" className="text-orange-400 text-base">
           Hello, I&apos;m Jason.
@@ -20,6 +23,7 @@ const Hero = () => {
           <span
             id="animatedHeroText-2"
             className="relative ml-0 overflow-hidden"
+            aria-live="polite"
           >
             <span>Create</span>
           </span>

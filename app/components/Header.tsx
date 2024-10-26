@@ -24,7 +24,7 @@ const Header = () => {
               <Link
                 href={link.url}
                 aria-label={link.label}
-                className="text-slate-300 hover:text-slate-50 font-light text-sm transition-all duration-300 ease-in-out"
+                className="text-slate-300 hover:text-orange-400 font-light text-sm transition-all duration-300 ease-in-out"
               >
                 {link.title}
               </Link>
@@ -35,13 +35,13 @@ const Header = () => {
           <Link href="#">
             <FaLinkedin
               size={32}
-              className="text-slate-300 hover:text-slate-50 transition-all duration-300 ease-in-out"
+              className="text-slate-300 hover:text-orange-400 transition-all duration-300 ease-in-out"
             />
           </Link>
           <Link href="#">
             <FaGithub
               size={32}
-              className="text-slate-300 hover:text-slate-50 transition-all duration-300 ease-in-out"
+              className="text-slate-300 hover:text-orange-400 transition-all duration-300 ease-in-out"
             />
           </Link>
         </div>
