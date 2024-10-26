@@ -1,47 +1,67 @@
-import Image, { StaticImageData } from "next/image";
-import Link from "next/link";
-import { RiNextjsFill } from "react-icons/ri";
-import { SiToyota, SiTypescript } from "react-icons/si";
+import React from "react";
+import { StaticImageData } from "next/image";
 
 interface PortfolioCardProps {
-  background: StaticImageData;
-  projectName: string;
+  name: string;
   liveLink: string;
   githubLink: string;
+  description: string;
+  tech: string[];
+  image: StaticImageData;
 }
 
 const PortfolioCard = ({
-  background,
-  projectName,
+  name,
+  image,
+  tech,
+  description,
   liveLink,
   githubLink,
 }: PortfolioCardProps) => {
   return (
-    <div className="w-[350px] relative overflow-hidden rounded-t-[40px] mt-10 p-5">
-      <div className="absolute top-0 left-0 bg-orange-400 text-black h-full w-full z-20 bg-opacity-40 backdrop-blur-md flex flex-col gap-2 p-5">
-        <h2 className="font-bold">{projectName}</h2>
-        <Link
-          className="bg-black text-white px-4 py-2 w-3/4 rounded-md text-center hover:bg-orange-400 hover:text-white transition-all duration-300 ease-in-out hover:scale-105"
-          href={liveLink}
-          target="_blank"
-        >
-          Live Site
-        </Link>
-        <Link
-          className="bg-black text-white px-4 py-2 w-3/4 rounded-md text-center hover:bg-orange-400 hover:text-white transition-all duration-300 ease-in-out hover:scale-105"
-          href={githubLink}
-          target="_blank"
-        >
-          Repo
-        </Link>
-        <h3 className="font-bold mt-5">Tech</h3>
-        <ul className="flex gap-4 justify-center items-center"></ul>
+    <div className="portfolio-card bg-blue-400 opacity-0 h-[90%] w-[350px] absolute bottom-0 rounded-t-[40px]">
+      <div className="h-[40%] w-full rounded-t-[40px] overflow-hidden relative">
+        <h2 className="absolute bottom-0 z-20 font-bold text-white py-1 px-5 backdrop-blur-md w-full">
+          {name}
+        </h2>
+        <img
+          src={image.src}
+          alt={`${name} promo image`}
+          className="absolute h-full w-full object-cover z-10"
+        />
       </div>
-      <img
-        src={background.src}
-        alt="Artio portfolio card background image"
-        className="absolute h-full w-full object-cover top-0 left-0 z-10"
-      />
+      <div className="h-[40%] w-full py-2 px-5">
+        <h5 className="font-bold">Tech</h5>
+        <hr />
+        <ul className="mt-2 text-sm flex justify-start items-center gap-2">
+          {tech.map((t) => (
+            <li key={t} className="text-white">
+              {t}
+            </li>
+          ))}
+        </ul>
+      </div>
+      <div className="h-[20%] w-full py-2 px-5">
+        <p className="text-sm text-white">{description}</p>
+        <div className="mt-2">
+          <a
+            href={liveLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-blue-500 underline"
+          >
+            Live Site
+          </a>
+          <a
+            href={githubLink}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="ml-4 text-blue-500 underline"
+          >
+            GitHub
+          </a>
+        </div>
+      </div>
     </div>
   );
 };

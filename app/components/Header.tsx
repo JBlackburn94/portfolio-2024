@@ -24,7 +24,7 @@ const Header = () => {
               <Link
                 href={link.url}
                 aria-label={link.label}
-                className="text-slate-300 hover:text-orange-400 font-light text-sm transition-all duration-300 ease-in-out"
+                className="text-slate-300 hover:text-blue-400 font-light text-sm transition-all duration-300 ease-in-out"
               >
                 {link.title}
               </Link>
@@ -35,13 +35,13 @@ const Header = () => {
           <Link href="#">
             <FaLinkedin
               size={32}
-              className="text-slate-300 hover:text-orange-400 transition-all duration-300 ease-in-out"
+              className="text-slate-300 hover:text-blue-400 transition-all duration-300 ease-in-out"
             />
           </Link>
           <Link href="#">
             <FaGithub
               size={32}
-              className="text-slate-300 hover:text-orange-400 transition-all duration-300 ease-in-out"
+              className="text-slate-300 hover:text-blue-400 transition-all duration-300 ease-in-out"
             />
           </Link>
         </div>
@@ -54,7 +54,7 @@ const Header = () => {
         </div>
         {isOpen && (
           <div className="absolute flex justify-end h-screen w-full top-0 left-0 bg-slate-950 bg-opacity-10 backdrop-blur-sm">
-            <ul className="flex uppercase font-black bg-orange-400 p-10 flex-col gap-3 text-xl h-[400px] w-[300px]">
+            <ul className="flex uppercase font-black bg-blue-400 p-10 flex-col gap-3 text-xl h-[400px] w-[300px]">
               {navLinks.map((link) => (
                 <li key={link.id}>
                   <Link href={link.url} aria-label={link.label}>

@@ -102,3 +102,52 @@ export const useHeroScroll = () => {
       });
   });
 };
+
+export const usePortfolioAnimation = () => {
+  useGSAP(() => {
+    const cards = gsap.utils.toArray(".portfolio-card") as HTMLElement[];
+
+    const tl = gsap.timeline({
+      scrollTrigger: {
+        trigger: ".portfolio-section",
+        pin: true,
+        start: "top top",
+        end: "+=200%",
+        scrub: true,
+        toggleActions: "play none none reverse",
+        onLeaveBack: () => {
+          cards.forEach((card) => {
+            gsap.set(card, {
+              x: 0,
+              opacity: 0,
+            });
+          });
+        },
+      },
+    });
+
+    cards.forEach((card, index) => {
+      tl.fromTo(
+        card,
+        {
+          y: 100,
+          opacity: 0,
+        },
+        {
+          y: 0,
+          opacity: 1,
+          duration: 1,
+          onComplete: () => {
+            if (index > 0) {
+              gsap.to(cards[index - 1], {
+                x: -90,
+                opacity: window.innerWidth < 768 ? 0 : 1,
+                duration: 1,
+              });
+            }
+          },
+        }
+      ).addPause("+=0.5"); // Add a small pause after each card animation
+    });
+  }, []);
+};

@@ -9,14 +9,14 @@ const Hero = () => {
       aria-labelledby="hero-section"
     >
       <div className="leading-none">
-        <h2 id="subheading-1" className="text-orange-400 text-base">
+        <h2 id="subheading-1" className="text-blue-400 text-base">
           Hello, I&apos;m Jason.
         </h2>
         <h1 className="overflow-y-hidden w-full uppercase font-bold relative">
           I{" "}
           <span
             id="animatedHeroText-1"
-            className="font-playball absolute lowercase text-orange-400 top-[-50px]"
+            className="font-playball absolute lowercase text-blue-400 top-[-50px]"
           >
             love
           </span>
@@ -29,7 +29,7 @@ const Hero = () => {
           </span>
           <br /> Websites.
         </h1>
-        <h2 id="subheading-2" className="text-orange-400 text-base text-right">
+        <h2 id="subheading-2" className="text-blue-400 text-base text-right">
           Frontend Developer
         </h2>
       </div>
