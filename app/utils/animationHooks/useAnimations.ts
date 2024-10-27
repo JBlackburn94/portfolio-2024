@@ -118,7 +118,7 @@ export const usePortfolioAnimation = () => {
         onLeaveBack: () => {
           cards.forEach((card) => {
             gsap.set(card, {
-              x: 0,
+              y: 100,
               opacity: 0,
             });
           });
@@ -130,24 +130,24 @@ export const usePortfolioAnimation = () => {
       tl.fromTo(
         card,
         {
-          x: 100,
+          y: 100,
           opacity: 0,
         },
         {
-          x: 0,
+          y: 0,
           opacity: 1,
           duration: 1,
           onComplete: () => {
             if (index > 0) {
               gsap.to(cards[index - 1], {
-                x: -150,
+                y: -50,
                 opacity: window.innerWidth < 768 ? 0 : 1,
                 duration: 1,
               });
             }
           },
         }
-      ).addPause("+=1"); // Add a small pause after each card animation
+      ).addPause("+=0.5"); // Add a small pause after each card animation
     });
   }, []);
 };
